@@ -17,18 +17,30 @@ def main () :
         print("\nExpense Tracker")
         print('1. Add an expense')
         print('2. List all expenses')
-        print('3. Sho total expenses')
+        print('3. Show total expenses')
         print('4 Filter epenses by category')
         print('5. Exit program')
     
-    choice = input('Enter your choice: ')
+        choice = input('Enter your choice: ')
 
-    if choice == '1' :
-        amount = float(input('Enter amount: '))
-        category = input("Enter category : ")
-        add_expenses(epenses, amount, category)
-    elif choice == '2' :
-        print("\nAll expenses")
-        print_expenses(expenses)
-    elif choice == '3' :
-        
+        if choice == '1' :
+            amount = float(input('Enter amount: '))
+            category = input("Enter category : ")
+            add_expenses(expenses, amount, category)
+        elif choice == '2' :
+            print("\nAll expenses")
+            print_expenses(expenses)
+        elif choice == '3' :
+            print(f'\nTotal expenses: {total_expenses(expenses)}')
+        elif choice == '4' :
+            category = input("Enter category: ")
+            print(f'\nExpenses for {category}')
+            expense_from_category = filter_expenses_by_category(expenses, category)
+            print_expenses(expense_from_category)
+        elif choice == '5' :
+            print("Exiting program")
+            break
+        else:
+            print("Invalid choice, try again!")
+
+main()
