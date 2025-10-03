@@ -10,3 +10,25 @@ def total_expenses(expenses) :
 
 def filter_expenses_by_category(expenses, category) :
     return filter(lambda expense : expense['category'] == category, expenses)
+
+def main () :
+    expenses = []
+    while True :
+        print("\nExpense Tracker")
+        print('1. Add an expense')
+        print('2. List all expenses')
+        print('3. Sho total expenses')
+        print('4 Filter epenses by category')
+        print('5. Exit program')
+    
+    choice = input('Enter your choice: ')
+
+    if choice == '1' :
+        amount = float(input('Enter amount: '))
+        category = input("Enter category : ")
+        add_expenses(epenses, amount, category)
+    elif choice == '2' :
+        print("\nAll expenses")
+        print_expenses(expenses)
+    elif choice == '3' :
+        
